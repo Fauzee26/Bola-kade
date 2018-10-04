@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<item name="btnDetailLineupAway" type="id" />-->
+    <!--<item name="btnDetailLineupHome" type="id" />-->
+    <!--<item name="imgDetailAway" type="id" />-->
+    <!--<item name="imgDetailHome" type="id" />-->
+    <!--<item name="tttt" type="id" />-->
+    <!--<item name="txtAwayName" type="id" />-->
+    <!--<item name="txtDetailAway" type="id" />-->
+    <!--<item name="txtDetailDate" type="id" />-->
+    <!--<item name="txtDetailGoalAway" type="id" />-->
+    <!--<item name="txtDetailGoalHome" type="id" />-->
+    <!--<item name="txtDetailHome" type="id" />-->
+    <!--<item name="txtDetailRedAway" type="id" />-->
+    <!--<item name="txtDetailRedHome" type="id" />-->
+    <!--<item name="txtDetailScoreAway" type="id" />-->
+    <!--<item name="txtDetailScoreHome" type="id" />-->
+    <!--<item name="txtDetailTime" type="id" />-->
+    <!--<item name="txtDetailYellowAway" type="id" />-->
+    <!--<item name="txtDetailYellowHome" type="id" />-->
+    <!--<item name="txtGoal" type="id" />-->
+    <!--<item name="txtHomeName" type="id" />-->
+    <!--<item name="txtRed" type="id" />-->
+    <!--<item name="txtYellow" type="id" />-->
+    <!--<item name="txtdetvs" type="id" />-->
+
+</resources>
