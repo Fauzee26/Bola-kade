@@ -1,11 +1,11 @@
 package fauzi.hilmy.bola_kade
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import android.widget.FrameLayout
-import fauzi.hilmy.bola_kade.R.id.nav_next
-import fauzi.hilmy.bola_kade.R.id.nav_prev
+import fauzi.hilmy.bola_kade.R.id.*
+import fauzi.hilmy.bola_kade.fragment.FragFavorite
+import fauzi.hilmy.bola_kade.fragment.FragNext
+import fauzi.hilmy.bola_kade.fragment.FragPrev
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity() {
                 nav_next -> {
                     loadsNextFragment(savedInstanceState)
                 }
+                nav_fav -> {
+                    loadsFavFragment(savedInstanceState)
+                }
             }
             true
         }
@@ -29,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadsNextFragment(savedInstanceState: Bundle?) {
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.framee, FragNext(), FragNext::class.java.simpleName)
@@ -38,10 +41,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadsPrevFragment(savedInstanceState: Bundle?) {
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.framee, FragPrev(), FragPrev::class.java.simpleName)
+                    .commit()
+        }
+    }
+
+    private fun loadsFavFragment(savedInstanceState: Bundle?) {
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.framee, FragFavorite(), FragFavorite::class.java.simpleName)
                     .commit()
         }
     }

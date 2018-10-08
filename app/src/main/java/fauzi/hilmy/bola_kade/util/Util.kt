@@ -12,7 +12,6 @@ import fauzi.hilmy.bola_kade.model.TeamsItem
 import fauzi.hilmy.bola_kade.util.MyConstant.Companion.API_KEY
 import retrofit2.Call
 import retrofit2.Response
-import java.lang.StringBuilder
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.Date
@@ -45,20 +44,20 @@ class Util {
                     hourr = hourWib
                     hourrr = hourr.toString()
                 }
-                val minuteWib = time!!.substring(3, 5)
+                val minuteWib = time.substring(3, 5)
                 return "$hourrr" + ":" + "${minuteWib}" + " WIB"
             }
         }
 
-        fun loadBadge(idTeam: String?, imageView: ImageView, context: Context) {
-            val callRetro = ApiClient().getInstance().getBadgeTeam(API_KEY, idTeam)
+        fun loadBadge(idTeam: String?, imageView: ImageView) {
+            val callRetro = ApiClient().getInstance().getDetailTeam(API_KEY, idTeam)
 
             callRetro.enqueue(object : retrofit2.Callback<ResponseLogo> {
                 override fun onResponse(call: Call<ResponseLogo>, response: Response<ResponseLogo>) {
                     if (response.isSuccessful) {
                         val data: List<TeamsItem> = response.body()!!.teams as List<TeamsItem>
                         data.forEach {
-                            Picasso.with(context).load(it.strTeamBadge).placeholder(R.drawable.ball).into(imageView)
+                            Picasso.get().load(it.strTeamBadge).placeholder(R.drawable.ball).into(imageView)
                         }
 
                     } else {
@@ -97,22 +96,4 @@ class Util {
             }
         }
     }
-
-
-    fun LoadDetail(idEvents: String?) {
-        val callLeague = ApiClient().getInstance().getDetail(API_KEY, idEvents)
-        callLeague.enqueue(object : retrofit2.Callback<ResponseLastNext> {
-            override fun onResponse(call: Call<ResponseLastNext>, response: Response<ResponseLastNext>) {
-                if (response.isSuccessful) {
-                    val dataLastNext = response.body()!!.events
-
-                }
-            }
-
-            override fun onFailure(call: Call<ResponseLastNext>, t: Throwable) {
-                Log.e("Error: Load Last == ", t.message)
-            }
-        })
-    }
-
 }

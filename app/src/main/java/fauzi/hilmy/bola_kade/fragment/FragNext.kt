@@ -1,4 +1,4 @@
-package fauzi.hilmy.bola_kade
+package fauzi.hilmy.bola_kade.fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import fauzi.hilmy.bola_kade.adapter.AdapterLast
+import fauzi.hilmy.bola_kade.DetailActivity
+import fauzi.hilmy.bola_kade.R
+import fauzi.hilmy.bola_kade.adapter.AdapterLastNext
 import fauzi.hilmy.bola_kade.api.ApiClient
 import fauzi.hilmy.bola_kade.model.DataLastNext
 import fauzi.hilmy.bola_kade.model.ResponseLastNext
@@ -27,7 +29,7 @@ import retrofit2.Response
 class FragNext : Fragment() {
 
     private var nextData: MutableList<DataLastNext> = mutableListOf()
-    private lateinit var nextAdapter: AdapterLast
+    private lateinit var nextAdapter: AdapterLastNext
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -35,7 +37,7 @@ class FragNext : Fragment() {
         swipeNext.setOnRefreshListener {
             getNext()
         }
-        nextAdapter = AdapterLast(nextData) {
+        nextAdapter = AdapterLastNext(nextData) {
             startActivity<DetailActivity>(
                     MyConstant.ID_EVENT to "${it.idEvent}"
             )

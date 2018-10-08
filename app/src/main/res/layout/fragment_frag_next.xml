@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp"
-    tools:context=".FragNext">
+    tools:context=".fragment.FragNext">
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipeNext"

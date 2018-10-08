@@ -21,12 +21,13 @@ interface ApiInterface {
     ): Call<ResponseLastNext>
 
     @GET("api/v1/json/{key}/lookupteam.php")
-    fun getBadgeTeam(
+    fun getDetailTeam(
             @Path("key") path: String?,
             @Query("id") parameter: String?
     ): Call<ResponseLogo>
 
     @GET("api/v1/json/{key}/lookupevent.php")
+
     fun getDetail(
             @Path("key") path: String?,
             @Query("id") parameter: String?
