@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 data class ResponseLastNext(
 
 	@field:SerializedName("events")
-	val events: List<DataLastNext?>? = null
+	val events: List<DataLastNext>
 )
