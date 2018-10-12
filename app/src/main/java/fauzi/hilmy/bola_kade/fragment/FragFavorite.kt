@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import fauzi.hilmy.bola_kade.DetailActivity
+import fauzi.hilmy.bola_kade.activity.DetailActivity
 import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.R.color.colorAccent
 import fauzi.hilmy.bola_kade.adapter.AdapterFavorite

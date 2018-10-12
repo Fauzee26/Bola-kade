@@ -1,7 +1,8 @@
-package fauzi.hilmy.bola_kade
+package fauzi.hilmy.bola_kade.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.R.id.*
 import fauzi.hilmy.bola_kade.fragment.FragFavorite
 import fauzi.hilmy.bola_kade.fragment.FragNext

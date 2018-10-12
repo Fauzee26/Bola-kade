@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import fauzi.hilmy.bola_kade.DetailActivity
+import fauzi.hilmy.bola_kade.activity.DetailActivity
 import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.adapter.AdapterLastNext
 import fauzi.hilmy.bola_kade.api.ApiClient

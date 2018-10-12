@@ -1,4 +1,4 @@
-package fauzi.hilmy.bola_kade
+package fauzi.hilmy.bola_kade.activity
 
 import android.app.AlertDialog
 import android.database.sqlite.SQLiteConstraintException
@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.api.ApiClient
 import fauzi.hilmy.bola_kade.db.FavMatch
 import fauzi.hilmy.bola_kade.db.database
