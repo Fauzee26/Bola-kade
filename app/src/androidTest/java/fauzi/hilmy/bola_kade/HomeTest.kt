@@ -51,7 +51,6 @@ class HomeTest {
         onView(withId(btnLineup)).perform(click())
         pressBack()
         onView(withId(floatFav)).perform(click())
-//        onView(withText(R.string.removeFav)).check(matches(isDisplayed()))
         pressBack()
         onView(withId(swipedd)).perform(swipeUp())
     }
