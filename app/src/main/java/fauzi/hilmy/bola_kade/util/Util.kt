@@ -1,12 +1,10 @@
 package fauzi.hilmy.bola_kade.util
 
-import android.content.Context
 import android.util.Log
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.api.ApiClient
-import fauzi.hilmy.bola_kade.model.ResponseLastNext
 import fauzi.hilmy.bola_kade.model.ResponseLogo
 import fauzi.hilmy.bola_kade.model.TeamsItem
 import fauzi.hilmy.bola_kade.util.MyConstant.Companion.API_KEY
@@ -14,7 +12,6 @@ import retrofit2.Call
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.Date
 
 class Util {
 

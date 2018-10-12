@@ -22,6 +22,7 @@
     <!--<item name="txtHomeName" type="id" />-->
     <!--<item name="txtRed" type="id" />-->
     <!--<item name="txtYellow" type="id" />-->
-    <!--<item name="txtdetvs" type="id" />-->
+    <item name="recycler_fav" type="id" />
+    <item name="swipedd" type="id" />
 
 </resources>

@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import fauzi.hilmy.bola_kade.DetailActivity
+import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.R.color.colorAccent
 import fauzi.hilmy.bola_kade.adapter.AdapterFavorite
 import fauzi.hilmy.bola_kade.db.FavMatch
@@ -75,11 +76,13 @@ class FragFavorite : Fragment(), AnkoComponent<Context> {
             leftPadding = dip(16)
 
             swipeRefresh = swipeRefreshLayout {
+                id = R.id.swipedd
                 setColorSchemeResources(colorAccent,
                         android.R.color.holo_green_light,
                         android.R.color.holo_orange_light,
                         android.R.color.holo_red_light)
                 recycler = recyclerView {
+                    id = R.id.recycler_fav
                     lparams(width = matchParent, height = wrapContent)
                     layoutManager = LinearLayoutManager(ctx)
                 }

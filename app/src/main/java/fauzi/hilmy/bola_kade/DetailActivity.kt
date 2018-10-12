@@ -25,6 +25,7 @@ import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.delete
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
+import org.jetbrains.anko.design.snackbar
 import org.jetbrains.anko.find
 import org.jetbrains.anko.image
 import retrofit2.Call
@@ -140,7 +141,8 @@ class DetailActivity : AppCompatActivity() {
                 }
             } else if (it.strAwayLineupDefense == null) {
                 btnLineup.setOnClickListener {
-                    Toast.makeText(applicationContext, "Lineups is have not been made", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(applicationContext, getString(R.string.notMaded), Toast.LENGTH_SHORT).show()
+                    snackbar(viewww, getString(R.string.notMaded)).show()
                 }
             }
         }
@@ -158,7 +160,8 @@ class DetailActivity : AppCompatActivity() {
                         FavMatch.AWAY_NAME to lastNext.strAwayTeam,
                         FavMatch.AWAY_SCORE to lastNext.intAwayScore)
             }
-            Toast.makeText(applicationContext, "Added To Favorite", Toast.LENGTH_SHORT).show()
+            snackbar(viewww, getString(R.string.addFav)).show()
+//            Toast.makeText(applicationContext, getString(R.string.addFav), Toast.LENGTH_SHORT).show()
         } catch (e: SQLiteConstraintException) {
             Toast.makeText(applicationContext, e.localizedMessage, Toast.LENGTH_SHORT).show()
         }
@@ -170,7 +173,8 @@ class DetailActivity : AppCompatActivity() {
                 delete(FavMatch.TABLE_FAVORITE, "(EVENT_ID = {id})",
                         "id" to id)
             }
-            Toast.makeText(applicationContext, "Removed from Favorite", Toast.LENGTH_SHORT).show()
+            snackbar(viewww, getString(R.string.removeFav)).show()
+//            Toast.makeText(applicationContext, getString(R.string.removeFav), Toast.LENGTH_SHORT).show()
         } catch (e: SQLiteConstraintException) {
             Toast.makeText(applicationContext, e.localizedMessage, Toast.LENGTH_SHORT).show()
         }
