@@ -1,7 +1,7 @@
 package fauzi.hilmy.bola_kade.model
 
-import com.dicoding.kotlinacademy.api.ApiRepository
-import com.dicoding.kotlinacademy.util.CoroutineContextProvider
+import fauzi.hilmy.bola_kade.api.ApiRepository
+import fauzi.hilmy.bola_kade.util.CoroutineContextProvider
 import com.google.gson.Gson
 import fauzi.hilmy.bola_kade.api.TheSportDBApi
 import kotlinx.coroutines.experimental.async
@@ -15,11 +15,11 @@ class MatchPresenter(private val view: MatchView,
     fun getTeamList(league: String?) {
         view.showLoading()
 
-        async(context.main){
+        async(context.main) {
             val data = bg {
                 gson.fromJson(apiRepository
-                        .doRequest(TheSportDBApi.getTeams(league)),
-                        ResponseLastNext::class.java
+                        .doRequest(TheSportDBApi.getNext(league)),
+                        ResponseNext::class.java
                 )
             }
             view.showTeamList(data.await().events)

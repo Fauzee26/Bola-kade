@@ -1,4 +1,4 @@
-package com.dicoding.kotlinacademy.util
+package fauzi.hilmy.bola_kade.util
 
 import kotlinx.coroutines.experimental.android.UI
 import kotlin.coroutines.experimental.CoroutineContext

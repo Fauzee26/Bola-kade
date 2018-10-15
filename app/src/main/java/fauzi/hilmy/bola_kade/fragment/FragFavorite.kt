@@ -15,7 +15,7 @@ import fauzi.hilmy.bola_kade.R.color.colorAccent
 import fauzi.hilmy.bola_kade.adapter.AdapterFavorite
 import fauzi.hilmy.bola_kade.db.FavMatch
 import fauzi.hilmy.bola_kade.db.database
-import fauzi.hilmy.bola_kade.util.MyConstant.Companion.ID_EVENT
+import fauzi.hilmy.bola_kade.util.MyConstant.ID_EVENT
 import org.jetbrains.anko.*
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select

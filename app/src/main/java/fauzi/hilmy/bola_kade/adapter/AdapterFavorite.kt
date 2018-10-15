@@ -32,7 +32,7 @@ class FavViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val txtScoreHomee: TextView = view.find(txtScoreHome)
 
     fun bindItem(favMatch: FavMatch, listener: (FavMatch) -> Unit) {
-        txtDatee.text = Util.FormatDate(favMatch.eventDate)
+        txtDatee.text = Util.formatDate(favMatch.eventDate)
         txtTimee.text = Util.timeFormat(favMatch.eventTime)
         txtHomee.text = favMatch.homeName
         txtAwayy.text = favMatch.awayName

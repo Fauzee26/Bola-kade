@@ -1,11 +1,11 @@
 package fauzi.hilmy.bola_kade.server
 
-import com.dicoding.kotlinacademy.api.ApiRepository
+import fauzi.hilmy.bola_kade.api.ApiRepository
 import org.junit.Test
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 
-class apiRepository {
+class ApiRepositoryTest {
     @Test
     fun testDoRequest() {
         val apiRepository = mock(ApiRepository::class.java)

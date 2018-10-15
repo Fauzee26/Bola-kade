@@ -1,13 +1,14 @@
 package fauzi.hilmy.bola_kade.util
 
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.api.ApiClient
 import fauzi.hilmy.bola_kade.model.ResponseLogo
 import fauzi.hilmy.bola_kade.model.TeamsItem
-import fauzi.hilmy.bola_kade.util.MyConstant.Companion.API_KEY
+import fauzi.hilmy.bola_kade.util.MyConstant.API_KEY
 import retrofit2.Call
 import retrofit2.Response
 import java.text.SimpleDateFormat
@@ -16,7 +17,7 @@ import java.util.*
 class Util {
 
     companion object {
-        fun FormatDate(date: String?): String {
+        fun formatDate(date: String?): String {
             if (date.isNullOrBlank()) {
                 return date.orEmpty()
             } else {
@@ -42,7 +43,7 @@ class Util {
                     hourrr = hourr.toString()
                 }
                 val minuteWib = time.substring(3, 5)
-                return "$hourrr" + ":" + "${minuteWib}" + " WIB"
+                return "$hourrr:$minuteWib WIB"
             }
         }
 
@@ -52,7 +53,7 @@ class Util {
             callRetro.enqueue(object : retrofit2.Callback<ResponseLogo> {
                 override fun onResponse(call: Call<ResponseLogo>, response: Response<ResponseLogo>) {
                     if (response.isSuccessful) {
-                        val data: List<TeamsItem> = response.body()!!.teams as List<TeamsItem>
+                        val data: List<TeamsItem> = response.body()!!.teams
                         data.forEach {
                             Picasso.get().load(it.strTeamBadge).placeholder(R.drawable.ball).into(imageView)
                         }
@@ -93,4 +94,12 @@ class Util {
             }
         }
     }
+}
+
+fun View.visible() {
+    visibility = View.VISIBLE
+}
+
+fun View.invisible() {
+    visibility = View.INVISIBLE
 }

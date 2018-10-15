@@ -25,7 +25,7 @@ class AdapterLastNext(private val lastNext: List<DataLastNext>, private val list
     class LastViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView),
             LayoutContainer {
         fun bindItem(lastNext: DataLastNext, listener: (DataLastNext) -> Unit) {
-            txtDate.text = Util.FormatDate(lastNext.dateEvent)
+            txtDate.text = Util.formatDate(lastNext.dateEvent)
             txtAway.text = lastNext.strAwayTeam
             txtTime.text = Util.timeFormat(lastNext.strTime)
             txtHome.text = lastNext.strHomeTeam

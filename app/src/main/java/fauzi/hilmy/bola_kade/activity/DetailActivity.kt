@@ -18,7 +18,7 @@ import fauzi.hilmy.bola_kade.db.database
 import fauzi.hilmy.bola_kade.model.DataLastNext
 import fauzi.hilmy.bola_kade.model.ResponseLastNext
 import fauzi.hilmy.bola_kade.util.MyConstant
-import fauzi.hilmy.bola_kade.util.MyConstant.Companion.ID_EVENT
+import fauzi.hilmy.bola_kade.util.MyConstant.ID_EVENT
 import fauzi.hilmy.bola_kade.util.Util
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.dialog.view.*
@@ -102,7 +102,7 @@ class DetailActivity : AppCompatActivity() {
         }
 
         lastNext.forEach {
-            txtDetailDate.text = Util.FormatDate(it.dateEvent)
+            txtDetailDate.text = Util.formatDate(it.dateEvent)
             txtDetailTime.text = Util.timeFormat(it.strTime)
             txtDetailHome.text = it.strHomeTeam
             txtDetailAway.text = it.strAwayTeam

@@ -14,9 +14,9 @@ import fauzi.hilmy.bola_kade.adapter.AdapterLastNext
 import fauzi.hilmy.bola_kade.api.ApiClient
 import fauzi.hilmy.bola_kade.model.DataLastNext
 import fauzi.hilmy.bola_kade.model.ResponseLastNext
-import fauzi.hilmy.bola_kade.util.MyConstant.Companion.API_KEY
-import fauzi.hilmy.bola_kade.util.MyConstant.Companion.ID_EVENT
-import fauzi.hilmy.bola_kade.util.MyConstant.Companion.ID_LIGA
+import fauzi.hilmy.bola_kade.util.MyConstant.API_KEY
+import fauzi.hilmy.bola_kade.util.MyConstant.ID_EVENT
+import fauzi.hilmy.bola_kade.util.MyConstant.ID_LIGA
 import kotlinx.android.synthetic.main.fragment_frag_prev.*
 import org.jetbrains.anko.support.v4.startActivity
 import retrofit2.Call

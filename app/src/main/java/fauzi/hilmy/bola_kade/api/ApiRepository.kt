@@ -1,4 +1,4 @@
-package com.dicoding.kotlinacademy.api
+package fauzi.hilmy.bola_kade.api
 
 import java.net.URL
 

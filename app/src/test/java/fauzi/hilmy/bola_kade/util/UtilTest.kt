@@ -7,7 +7,7 @@ class UtilTest {
 
     @Test
     fun formatDate() {
-        assertEquals("Friday, 12 Oct 2018", Util.FormatDate("2018-10-12"))
+        assertEquals("Friday, 12 Oct 2018", Util.formatDate("2018-10-12"))
     }
 
     @Test

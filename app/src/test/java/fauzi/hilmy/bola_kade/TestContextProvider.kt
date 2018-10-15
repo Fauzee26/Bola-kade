@@ -1,6 +1,6 @@
-package com.dicoding.kotlinacademy
+package fauzi.hilmy.bola_kade
 
-import com.dicoding.kotlinacademy.util.CoroutineContextProvider
+import fauzi.hilmy.bola_kade.util.CoroutineContextProvider
 import kotlinx.coroutines.experimental.Unconfined
 import kotlin.coroutines.experimental.CoroutineContext
 

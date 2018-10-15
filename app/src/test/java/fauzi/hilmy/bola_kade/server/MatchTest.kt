@@ -1,7 +1,7 @@
 package fauzi.hilmy.bola_kade.server
 
-import com.dicoding.kotlinacademy.TestContextProvider
-import com.dicoding.kotlinacademy.api.ApiRepository
+import fauzi.hilmy.bola_kade.TestContextProvider
+import fauzi.hilmy.bola_kade.api.ApiRepository
 import com.google.gson.Gson
 import fauzi.hilmy.bola_kade.api.TheSportDBApi
 import fauzi.hilmy.bola_kade.model.DataLastNext
@@ -40,7 +40,7 @@ class MatchTest {
         val league = "English Premiere League"
 
         `when`(gson.fromJson(apiRepository
-                .doRequest(TheSportDBApi.getTeams(league)),
+                .doRequest(TheSportDBApi.getNext(league)),
                 ResponseLastNext::class.java
         )).thenReturn(response)
 
