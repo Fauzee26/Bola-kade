@@ -1,4 +1,4 @@
-package fauzi.hilmy.bola_kade.adapter
+package fauzi.hilmy.bola_kade.favorite
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.R.id.*
-import fauzi.hilmy.bola_kade.db.FavMatch
 import fauzi.hilmy.bola_kade.util.Util
 import org.jetbrains.anko.find
 

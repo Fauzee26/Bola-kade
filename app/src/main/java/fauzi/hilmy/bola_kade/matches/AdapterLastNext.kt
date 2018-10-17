@@ -1,4 +1,4 @@
-package fauzi.hilmy.bola_kade.adapter
+package fauzi.hilmy.bola_kade.matches
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package fauzi.hilmy.bola_kade.fragment
+package fauzi.hilmy.bola_kade.matches.next
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -10,26 +10,23 @@ import fauzi.hilmy.bola_kade.api.ApiRepository
 import com.google.gson.Gson
 import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.activity.DetailActivity
-import fauzi.hilmy.bola_kade.adapter.AdapterLastNext
+import fauzi.hilmy.bola_kade.matches.AdapterLastNext
 import fauzi.hilmy.bola_kade.model.DataLastNext
-import fauzi.hilmy.bola_kade.model.MatchPresenter
-import fauzi.hilmy.bola_kade.model.MatchView
 import fauzi.hilmy.bola_kade.util.MyConstant
 import fauzi.hilmy.bola_kade.util.MyConstant.ID_LIGA
 import fauzi.hilmy.bola_kade.util.invisible
 import fauzi.hilmy.bola_kade.util.visible
 import kotlinx.android.synthetic.main.fragment_frag_next.*
-import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.startActivity
 
 /**
  * A simple [Fragment] subclass.
  *
  */
-class FragNext : Fragment(), MatchView {
+class FragNext : Fragment(), NextMatchView {
     private var nextData: MutableList<DataLastNext> = mutableListOf()
     private lateinit var nextAdapter: AdapterLastNext
-    private lateinit var presenter: MatchPresenter
+    private lateinit var presenter: NextMatchPresenter
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -37,11 +34,11 @@ class FragNext : Fragment(), MatchView {
         val request = ApiRepository()
         val gson = Gson()
 
-        presenter = MatchPresenter(this, request, gson)
+        presenter = NextMatchPresenter(this, request, gson)
 
         swipeNext.setOnRefreshListener {
             //            getNext()
-            presenter.getTeamList(ID_LIGA)
+            presenter.getNextList(ID_LIGA)
         }
 
         nextAdapter = AdapterLastNext(nextData) {
@@ -51,7 +48,7 @@ class FragNext : Fragment(), MatchView {
         }
         recyclerNext.layoutManager = LinearLayoutManager(context)
         recyclerNext.adapter = nextAdapter
-        presenter.getTeamList(ID_LIGA)
+        presenter.getNextList(ID_LIGA)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

@@ -13,10 +13,10 @@ import android.widget.TextView
 import android.widget.Toast
 import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.api.ApiClient
-import fauzi.hilmy.bola_kade.db.FavMatch
-import fauzi.hilmy.bola_kade.db.database
+import fauzi.hilmy.bola_kade.favorite.FavMatch
+import fauzi.hilmy.bola_kade.favorite.database
 import fauzi.hilmy.bola_kade.model.DataLastNext
-import fauzi.hilmy.bola_kade.model.ResponseLastNext
+import fauzi.hilmy.bola_kade.model.ResponsePrevNext
 import fauzi.hilmy.bola_kade.util.MyConstant
 import fauzi.hilmy.bola_kade.util.MyConstant.ID_EVENT
 import fauzi.hilmy.bola_kade.util.Util
@@ -45,7 +45,6 @@ class DetailActivity : AppCompatActivity() {
         getDetail()
         favoriteState()
         setFavMatch()
-
     }
 
     private fun favoriteState() {
@@ -60,8 +59,8 @@ class DetailActivity : AppCompatActivity() {
 
     private fun getDetail() {
         val callLeague = ApiClient().getInstance().getDetail(MyConstant.API_KEY, id)
-        callLeague.enqueue(object : retrofit2.Callback<ResponseLastNext> {
-            override fun onResponse(call: Call<ResponseLastNext>, response: Response<ResponseLastNext>) {
+        callLeague.enqueue(object : retrofit2.Callback<ResponsePrevNext> {
+            override fun onResponse(call: Call<ResponsePrevNext>, response: Response<ResponsePrevNext>) {
                 if (response.isSuccessful) {
                     val dataLastNext = response.body()?.events
                     setup(dataLastNext as List<DataLastNext>)
@@ -69,7 +68,7 @@ class DetailActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<ResponseLastNext>, t: Throwable) {
+            override fun onFailure(call: Call<ResponsePrevNext>, t: Throwable) {
                 Log.e("Error: ", t.message)
                 Toast.makeText(applicationContext, t.message, Toast.LENGTH_SHORT).show()
 

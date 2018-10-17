@@ -1,4 +1,4 @@
-package fauzi.hilmy.bola_kade.db
+package fauzi.hilmy.bola_kade.favorite
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

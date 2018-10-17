@@ -6,20 +6,20 @@
         android:id="@+id/nav_prev"
         android:enabled="true"
         android:icon="@drawable/prev"
-        android:title="Prev Match"
+        android:title="@string/prev_match"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_next"
         android:enabled="true"
         android:icon="@drawable/next"
-        android:title="Next Match"
+        android:title="@string/next_match"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_fav"
         android:enabled="true"
         android:icon="@drawable/ic_favorite_black_24dp"
-        android:title="Favorite"
+        android:title="@string/favorite"
         app:showAsAction="ifRoom" />
 </menu>

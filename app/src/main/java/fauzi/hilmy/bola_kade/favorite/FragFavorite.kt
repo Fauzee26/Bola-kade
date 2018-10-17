@@ -1,4 +1,4 @@
-package fauzi.hilmy.bola_kade.fragment
+package fauzi.hilmy.bola_kade.favorite
 
 import android.content.Context
 import android.os.Bundle
@@ -12,9 +12,6 @@ import android.view.ViewGroup
 import fauzi.hilmy.bola_kade.activity.DetailActivity
 import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.R.color.colorAccent
-import fauzi.hilmy.bola_kade.adapter.AdapterFavorite
-import fauzi.hilmy.bola_kade.db.FavMatch
-import fauzi.hilmy.bola_kade.db.database
 import fauzi.hilmy.bola_kade.util.MyConstant.ID_EVENT
 import org.jetbrains.anko.*
 import org.jetbrains.anko.db.classParser

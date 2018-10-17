@@ -5,9 +5,11 @@ import fauzi.hilmy.bola_kade.api.ApiRepository
 import com.google.gson.Gson
 import fauzi.hilmy.bola_kade.api.TheSportDBApi
 import fauzi.hilmy.bola_kade.model.DataLastNext
-import fauzi.hilmy.bola_kade.model.MatchPresenter
-import fauzi.hilmy.bola_kade.model.MatchView
-import fauzi.hilmy.bola_kade.model.ResponseLastNext
+import fauzi.hilmy.bola_kade.matches.next.NextMatchPresenter
+import fauzi.hilmy.bola_kade.matches.next.NextMatchView
+import fauzi.hilmy.bola_kade.model.ResponsePrevNext
+import fauzi.hilmy.bola_kade.util.MyConstant
+import fauzi.hilmy.bola_kade.util.MyConstant.ID_LIGA
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mock
@@ -15,9 +17,9 @@ import org.mockito.Mockito
 import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
 
-class MatchTest {
+class NextMatchTest {
     @Mock
-    lateinit var view: MatchView
+    lateinit var view: NextMatchView
 
     @Mock
     lateinit var apiRepository: ApiRepository
@@ -25,26 +27,25 @@ class MatchTest {
     @Mock
     lateinit var gson: Gson
 
-    lateinit var presenter: MatchPresenter
+    lateinit var presenter: NextMatchPresenter
 
     @Before
     fun setupEnv() {
         MockitoAnnotations.initMocks(this)
-        presenter = MatchPresenter(view, apiRepository, gson, TestContextProvider())
+        presenter = NextMatchPresenter(view, apiRepository, gson, TestContextProvider())
     }
 
     @Test
-    fun testGetTeamList() {
+    fun testgetNext() {
         val teams: MutableList<DataLastNext> = mutableListOf()
-        val response = ResponseLastNext(teams)
-        val league = "English Premiere League"
+        val response = ResponsePrevNext(teams)
 
         `when`(gson.fromJson(apiRepository
-                .doRequest(TheSportDBApi.getNext(league)),
-                ResponseLastNext::class.java
+                .doRequest(TheSportDBApi.getNext(ID_LIGA)),
+                ResponsePrevNext::class.java
         )).thenReturn(response)
 
-        presenter.getTeamList(league)
+        presenter.getNextList(ID_LIGA)
 
         Mockito.verify(view).showLoading()
         Mockito.verify(view).showTeamList(teams)

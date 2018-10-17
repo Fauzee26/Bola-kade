@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import fauzi.hilmy.bola_kade.R
 import fauzi.hilmy.bola_kade.R.id.*
-import fauzi.hilmy.bola_kade.fragment.FragFavorite
-import fauzi.hilmy.bola_kade.fragment.FragNext
-import fauzi.hilmy.bola_kade.fragment.FragPrev
+import fauzi.hilmy.bola_kade.favorite.FragFavorite
+import fauzi.hilmy.bola_kade.matches.next.FragNext
+import fauzi.hilmy.bola_kade.matches.prev.FragPrev
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadsNextFragment(savedInstanceState: Bundle?) {
+        title = getString(R.string.next_match)
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadsPrevFragment(savedInstanceState: Bundle?) {
+        title = getString(R.string.prev_match)
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
@@ -51,6 +53,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadsFavFragment(savedInstanceState: Bundle?) {
+        title = getString(R.string.favorite)
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()

@@ -1,4 +1,4 @@
-package fauzi.hilmy.bola_kade.db
+package fauzi.hilmy.bola_kade.favorite
 
 class FavMatch(val id: Long?, val eventId: String?, val eventDate: String?, val eventTime: String?, val homeName: String?,
                val homeScore: String?, val awayName: String?, val awayScore: String?) {
