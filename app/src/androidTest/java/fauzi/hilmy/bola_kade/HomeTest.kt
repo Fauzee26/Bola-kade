@@ -22,7 +22,7 @@ class HomeTest {
     var activityRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun testPrev() {
+    fun testPrevandFav() {
 
         Thread.sleep(3000)
         onView(withId(recyclerPrev))
@@ -40,6 +40,23 @@ class HomeTest {
 
         Thread.sleep(1000)
         onView(withId(swipeLast)).perform(swipeUp())
+
+        Thread.sleep(1000)
+        onView(withId(nav_fav)).perform(click())
+        onView(withId(recycler_fav))
+                .check(matches(isDisplayed()))
+
+        Thread.sleep(1000)
+        onView(withId(recycler_fav)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+
+        Thread.sleep(1000)
+        onView(withId(floatFav)).perform(click())
+
+        Thread.sleep(1000)
+        pressBack()
+
+        Thread.sleep(1000)
+        onView(withId(swipedd)).perform(swipeUp())
     }
 
     @Test
@@ -56,29 +73,4 @@ class HomeTest {
         onView(withText("Lineups is have not been made")).check(matches(isDisplayed()))
     }
 
-    @Test
-    fun testFav() {
-        Thread.sleep(1000)
-        onView(withId(nav_fav)).perform(click())
-        onView(withId(recycler_fav))
-                .check(matches(isDisplayed()))
-
-        Thread.sleep(1000)
-        onView(withId(recycler_fav)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
-
-        Thread.sleep(1000)
-        onView(withId(btnLineup)).perform(click())
-
-        Thread.sleep(1000)
-        pressBack()
-
-        Thread.sleep(1000)
-        onView(withId(floatFav)).perform(click())
-
-        Thread.sleep(1000)
-        pressBack()
-
-        Thread.sleep(1000)
-        onView(withId(swipedd)).perform(swipeUp())
-    }
 }
