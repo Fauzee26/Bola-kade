@@ -1,4 +1,5 @@
-package fauzi.hilmy.bolakade.favorite
+package fauzi.hilmy.bolakade.favorite.Favteam
+
 
 import android.content.Context
 import android.os.Bundle
@@ -9,9 +10,12 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import fauzi.hilmy.bolakade.activity.DetailActivity
+
 import fauzi.hilmy.bolakade.R
 import fauzi.hilmy.bolakade.R.color.colorAccent
+import fauzi.hilmy.bolakade.detail.team.DetailTeamActivity
+import fauzi.hilmy.bolakade.favorite.db.FavTeam
+import fauzi.hilmy.bolakade.favorite.db.database
 import fauzi.hilmy.bolakade.util.MyConstant.ID_EVENT
 import org.jetbrains.anko.*
 import org.jetbrains.anko.db.classParser
@@ -26,25 +30,25 @@ import org.jetbrains.anko.support.v4.swipeRefreshLayout
  * A simple [Fragment] subclass.
  *
  */
-class FragFavorite : Fragment(), AnkoComponent<Context> {
+class FragmentFavoriteTeam : Fragment(), AnkoComponent<Context> {
 
-    private var favMatch: MutableList<FavMatch> = mutableListOf()
-    private lateinit var adapter: AdapterFavorite
+    private var favTeam: MutableList<FavTeam> = mutableListOf()
+    private lateinit var adapter: AdapterFavoriteTeam
     private lateinit var recycler: RecyclerView
     private lateinit var swipeRefresh: SwipeRefreshLayout
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        adapter = AdapterFavorite(favMatch) {
-            startActivity<DetailActivity>(
-                    ID_EVENT to "${it.eventId}"
+        adapter = AdapterFavoriteTeam(favTeam) {
+            startActivity<DetailTeamActivity>(
+                    ID_EVENT to it
             )
         }
 
         recycler.adapter = adapter
         showData()
         swipeRefresh.onRefresh {
-            favMatch.clear()
+            favTeam.clear()
             showData()
         }
     }
@@ -52,9 +56,9 @@ class FragFavorite : Fragment(), AnkoComponent<Context> {
     private fun showData() {
         context?.database?.use {
             swipeRefresh.isRefreshing = false
-            val result = select(FavMatch.TABLE_FAVORITE)
-            val favMatchh = result.parseList(classParser<FavMatch>())
-            favMatch.addAll(favMatchh)
+            val result = select(FavTeam.TABLE_TEAM)
+            val favTeamm = result.parseList(classParser<FavTeam>())
+            favTeam.addAll(favTeamm)
             adapter.notifyDataSetChanged()
         }
     }

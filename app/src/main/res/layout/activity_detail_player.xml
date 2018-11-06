@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="fauzi.hilmy.bolakade.detail.player.DetailPlayerActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgDetailPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:src="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="Weight(KG)"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/txtDetailWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="36sp"
+                        tools:text="65.7" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="Height(m)"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/txtDetailHeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="36sp"
+                        tools:text="1.73" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtDetailPosition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                tools:text="Forward" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#868b8b8b" />
+
+            <TextView
+                android:id="@+id/txtDetailOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:paddingBottom="10dp"
+                tools:text="Aaron James Ramsey /ˈræmzi/ (born 26 December 1990) is a Welsh footballer who plays as a midfielder for Arsenal and the Wales national football team.
+             Ramsey mainly plays as a box-to-box midfielder, but has also been deployed on the left and right wings.
+              He played as a schoolboy for Cardiff City, where he spent eight years in youth football, became the club's youngest ever first team player, and made 22 appearances for the senior team – including the 2008 FA Cup Final.
+               Ramsey moved to Arsenal in 2008 in a £5 million deal, where he quickly gained first team experience.
+                However, his career stalled significantly after he suffered a broken leg in a match against Stoke City in February 2010.
+                 After two loan spells away from Arsenal, he returned to full fitness and re-established himself as a regular starter during the 2011–12 season.
+                  Ramsey was a key player for Arsenal in the 2013–14 season campaign, scoring 16 goals in all competitions, including the winner in the 2014 FA Cup Final." />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

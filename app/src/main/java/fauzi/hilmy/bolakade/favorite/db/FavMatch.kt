@@ -1,4 +1,4 @@
-package fauzi.hilmy.bolakade.favorite
+package fauzi.hilmy.bolakade.favorite.db
 
 class FavMatch(val id: Long?, val eventId: String?, val eventDate: String?, val eventTime: String?, val homeName: String?,
                val homeScore: String?, val awayName: String?, val awayScore: String?) {
@@ -13,5 +13,5 @@ class FavMatch(val id: Long?, val eventId: String?, val eventDate: String?, val 
         const val AWAY_NAME: String = "AWAY_NAME"
         const val HOME_SCORE: String = "HOME_SCORE"
         const val AWAY_SCORE: String = "AWAY_SCORE"
-        }
+    }
 }

@@ -32,90 +32,90 @@ class appBehaviour {
     @JvmField
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
-    @Test
-    fun appBehaviour() {
-        val bottomNavigationItemView = onView(
-                allOf(withId(R.id.nav_prev), withContentDescription("Prev Match"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.bottom_nav),
-                                        0),
-                                0),
-                        isDisplayed()))
-        bottomNavigationItemView.perform(click())
-
-        val recyclerView = onView(
-                allOf(withId(R.id.recyclerPrev),
-                        childAtPosition(
-                                withClassName(`is`("android.widget.RelativeLayout")),
-                                0)))
-        recyclerView.perform(actionOnItemAtPosition<ViewHolder>(3, click()))
-
-        val appCompatButton = onView(
-                allOf(withId(R.id.btnLineup), withText("L i n e u p s"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.viewww),
-                                        0),
-                                6),
-                        isDisplayed()))
-        appCompatButton.perform(click())
-
-        pressBack()
-
-        val floatingActionButton = onView(
-                allOf(withId(R.id.floatFav),
-                        childAtPosition(
-                                allOf(withId(R.id.viewww),
-                                        childAtPosition(
-                                                withId(android.R.id.content),
-                                                0)),
-                                1),
-                        isDisplayed()))
-        floatingActionButton.perform(click())
-
-        pressBack()
-
-        val bottomNavigationItemView2 = onView(
-                allOf(withId(R.id.nav_next), withContentDescription("Next Match"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.bottom_nav),
-                                        0),
-                                1),
-                        isDisplayed()))
-        bottomNavigationItemView2.perform(click())
-
-        val recyclerView2 = onView(
-                allOf(withId(R.id.recyclerNext),
-                        childAtPosition(
-                                withClassName(`is`("android.widget.RelativeLayout")),
-                                0)))
-                .perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(10))
-        recyclerView2.perform(actionOnItemAtPosition<ViewHolder>(10, click()))
-        val appCompatButton2 = onView(
-                allOf(withId(R.id.btnLineup), withText("L i n e u p s"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.viewww),
-                                        0),
-                                6),
-                        isDisplayed()))
-        appCompatButton2.perform(click())
-
-        pressBack()
-
-        val bottomNavigationItemView3 = onView(
-                allOf(withId(R.id.nav_fav), withContentDescription("Favorite"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.bottom_nav),
-                                        0),
-                                2),
-                        isDisplayed()))
-        bottomNavigationItemView3.perform(click())
-
-    }
+//    @Test
+//    fun appBehaviour() {
+//        val bottomNavigationItemView = onView(
+//                allOf(withId(R.id.nav_prev), withContentDescription("Prev Match"),
+//                        childAtPosition(
+//                                childAtPosition(
+//                                        withId(R.id.bottom_nav),
+//                                        0),
+//                                0),
+//                        isDisplayed()))
+//        bottomNavigationItemView.perform(click())
+//
+//        val recyclerView = onView(
+//                allOf(withId(R.id.recyclerPrev),
+//                        childAtPosition(
+//                                withClassName(`is`("android.widget.RelativeLayout")),
+//                                0)))
+//        recyclerView.perform(actionOnItemAtPosition<ViewHolder>(3, click()))
+//
+//        val appCompatButton = onView(
+//                allOf(withId(R.id.btnLineup), withText("L i n e u p s"),
+//                        childAtPosition(
+//                                childAtPosition(
+//                                        withId(R.id.viewww),
+//                                        0),
+//                                6),
+//                        isDisplayed()))
+//        appCompatButton.perform(click())
+//
+//        pressBack()
+//
+//        val floatingActionButton = onView(
+//                allOf(withId(R.id.floatFav),
+//                        childAtPosition(
+//                                allOf(withId(R.id.viewww),
+//                                        childAtPosition(
+//                                                withId(android.R.id.content),
+//                                                0)),
+//                                1),
+//                        isDisplayed()))
+//        floatingActionButton.perform(click())
+//
+//        pressBack()
+//
+//        val bottomNavigationItemView2 = onView(
+//                allOf(withId(R.id.nav_next), withContentDescription("Next Match"),
+//                        childAtPosition(
+//                                childAtPosition(
+//                                        withId(R.id.bottom_nav),
+//                                        0),
+//                                1),
+//                        isDisplayed()))
+//        bottomNavigationItemView2.perform(click())
+//
+//        val recyclerView2 = onView(
+//                allOf(withId(R.id.recyclerNext),
+//                        childAtPosition(
+//                                withClassName(`is`("android.widget.RelativeLayout")),
+//                                0)))
+//                .perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(10))
+//        recyclerView2.perform(actionOnItemAtPosition<ViewHolder>(10, click()))
+//        val appCompatButton2 = onView(
+//                allOf(withId(R.id.btnLineup), withText("L i n e u p s"),
+//                        childAtPosition(
+//                                childAtPosition(
+//                                        withId(R.id.viewww),
+//                                        0),
+//                                6),
+//                        isDisplayed()))
+//        appCompatButton2.perform(click())
+//
+//        pressBack()
+//
+//        val bottomNavigationItemView3 = onView(
+//                allOf(withId(R.id.nav_fav), withContentDescription("Favorite"),
+//                        childAtPosition(
+//                                childAtPosition(
+//                                        withId(R.id.bottom_nav),
+//                                        0),
+//                                2),
+//                        isDisplayed()))
+//        bottomNavigationItemView3.perform(click())
+//
+//    }
 
     private fun childAtPosition(
             parentMatcher: Matcher<View>, position: Int): Matcher<View> {

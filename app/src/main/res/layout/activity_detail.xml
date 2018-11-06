@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     android:id="@+id/viewww"
-    tools:context=".activity.DetailActivity">
+    tools:context=".detail.DetailMatchActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

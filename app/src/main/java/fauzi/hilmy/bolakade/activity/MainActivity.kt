@@ -1,63 +1,68 @@
 package fauzi.hilmy.bolakade.activity
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import fauzi.hilmy.bolakade.R
 import fauzi.hilmy.bolakade.R.id.*
-import fauzi.hilmy.bolakade.favorite.FragFavorite
-import fauzi.hilmy.bolakade.matches.next.FragNext
-import fauzi.hilmy.bolakade.matches.prev.FragPrev
+import fauzi.hilmy.bolakade.favorite.FragmentFavorite
+import fauzi.hilmy.bolakade.matches.MatchFragment
+import fauzi.hilmy.bolakade.teams.TeamsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private var savedInstanceState: Bundle? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.savedInstanceState = savedInstanceState
         setContentView(R.layout.activity_main)
 
         bottom_nav.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                nav_prev -> {
-                    loadsPrevFragment(savedInstanceState)
+                nav_match -> {
+                    supportActionBar?.show()
+                    title = "Matches"
+                    addFragmentOnTop(MatchFragment())
                 }
-                nav_next -> {
-                    loadsNextFragment(savedInstanceState)
+                nav_team -> {
+                    supportActionBar?.show()
+                    title = "Teams"
+                    addFragmentOnTop(TeamsFragment())
                 }
                 nav_fav -> {
-                    loadsFavFragment(savedInstanceState)
+                    supportActionBar?.show()
+                    title = "Favorite"
+                    addFragmentOnTop(FragmentFavorite())
                 }
             }
             true
         }
-        bottom_nav.selectedItemId = nav_prev
+        bottom_nav.selectedItemId = nav_match
     }
 
-    private fun loadsNextFragment(savedInstanceState: Bundle?) {
-        title = getString(R.string.next_match)
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.nav_search, menu)
+//        return true
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return when (item.itemId) {
+//            action_searchh -> {
+//                val intent = Intent(applicationContext, SearchActivity::class.java)
+//                startActivity(intent)
+//
+//                true
+//            }
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }
+
+    private fun addFragmentOnTop(fragment: Fragment) {
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.framee, FragNext(), FragNext::class.java.simpleName)
-                    .commit()
-        }
-    }
-
-    private fun loadsPrevFragment(savedInstanceState: Bundle?) {
-        title = getString(R.string.prev_match)
-        if (savedInstanceState == null) {
-            supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.framee, FragPrev(), FragPrev::class.java.simpleName)
-                    .commit()
-        }
-    }
-
-    private fun loadsFavFragment(savedInstanceState: Bundle?) {
-        title = getString(R.string.favorite)
-        if (savedInstanceState == null) {
-            supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.framee, FragFavorite(), FragFavorite::class.java.simpleName)
+                    .replace(R.id.framee, fragment, fragment::class.java.simpleName)
                     .commit()
         }
     }

@@ -1,13 +1,15 @@
 package fauzi.hilmy.bolakade.util
 
+import android.content.Context
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import fauzi.hilmy.bolakade.R
 import fauzi.hilmy.bolakade.api.ApiClient
+import fauzi.hilmy.bolakade.model.League
 import fauzi.hilmy.bolakade.model.logo.ResponseLogo
-import fauzi.hilmy.bolakade.model.logo.TeamsItem
+import fauzi.hilmy.bolakade.model.logo.TeamsItemm
 import fauzi.hilmy.bolakade.util.MyConstant.API_KEY
 import retrofit2.Call
 import retrofit2.Response
@@ -48,12 +50,12 @@ class Util {
         }
 
         fun loadBadge(idTeam: String?, imageView: ImageView) {
-            val callRetro = ApiClient().getInstance().getDetailTeam(API_KEY, idTeam)
-
+            val callRetro = ApiClient().getInstance().getDetailTeam(idTeam)
             callRetro.enqueue(object : retrofit2.Callback<ResponseLogo> {
                 override fun onResponse(call: Call<ResponseLogo>, response: Response<ResponseLogo>) {
+                    Log.v("Cek Data Gambar", response.body().toString())
                     if (response.isSuccessful) {
-                        val data: List<TeamsItem> = response.body()!!.teams
+                        val data: List<TeamsItemm> = response.body()!!.logo
                         data.forEach {
                             Picasso.get().load(it.strTeamBadge).placeholder(R.drawable.ball).into(imageView)
                         }
@@ -67,6 +69,19 @@ class Util {
                     Log.e("Error: Load Badge == ", t.message)
                 }
             })
+        }
+
+        fun getListLeague(context: Context, league: MutableList<League> = mutableListOf()) : List<League> {
+            val leagueName = context.resources.getStringArray(R.array.leagueNamearray)
+            val leagueId = context.resources.getStringArray(R.array.leagueIdarray)
+
+            league.clear()
+
+            for (i in leagueName.indices) {
+                league.add(League(leagueName[i], leagueId[i]))
+            }
+
+            return league
         }
 
         fun formatPlayer(players: String?): String {
@@ -94,6 +109,14 @@ class Util {
             }
         }
     }
+}
+
+fun String.dateTimeToFormat(format: String = "yyyy-MM-dd HH:mm:ss"): Long {
+
+    val formatter = SimpleDateFormat(format, Locale.ENGLISH)
+    val date = formatter.parse(this)
+
+    return date.time
 }
 
 fun View.visible() {

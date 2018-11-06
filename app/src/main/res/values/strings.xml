@@ -6,7 +6,61 @@
     <string name="notMaded">Lineups is have not been made</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="prev_match">Prev Match</string>
-    <string name="next_match">Next Match</string>
     <string name="favorite">Favorite</string>
+    <string name="match">Matches</string>
+    <string name="team">Teams</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="overview_null">There is No Overview here</string>
+    <string name="search">Search</string>
+
+    <string-array name="leagueNamearray">
+        <item>English Premier League</item>
+        <item>English League Championship</item>
+        <item>Scottish Premier League</item>
+        <item>German Bundesliga</item>
+        <item>Italian Serie A</item>
+        <item>French Ligue 1</item>
+        <item>Spanish La Liga</item>
+        <item>Greek Superleague Greece</item>
+        <item>Dutch Eredivisie</item>
+        <item>Belgian Jupiler League</item>
+        <item>Turkish Super Lig</item>
+        <item>Danish Superliga</item>
+        <item>Portuguese Primeira Liga</item>
+        <item>American Major League Soccer</item>
+        <item>Swedish Allsvenskan</item>
+        <item>Mexican Primera League</item>
+        <item>Brazilian Brasileirao</item>
+        <item>Ukrainian Premier League</item>
+        <item>Russian Football Premier League</item>
+        <item>Australian A-League</item>
+        <item>Eliteserien</item>
+        <item>Chinese Super League</item>
+    </string-array>
+
+    <string-array name="leagueIdarray">
+        <item>4328</item>
+        <item>4329</item>
+        <item>4330</item>
+        <item>4331</item>
+        <item>4332</item>
+        <item>4334</item>
+        <item>4335</item>
+        <item>4336</item>
+        <item>4337</item>
+        <item>4338</item>
+        <item>4339</item>
+        <item>4340</item>
+        <item>4344</item>
+        <item>4346</item>
+        <item>4347</item>
+        <item>4350</item>
+        <item>4351</item>
+        <item>4354</item>
+        <item>4355</item>
+        <item>4356</item>
+        <item>4358</item>
+        <item>4359</item>
+    </string-array>
 </resources>

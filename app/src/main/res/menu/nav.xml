@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/nav_prev"
+        android:id="@+id/nav_match"
         android:enabled="true"
-        android:icon="@drawable/prev"
-        android:title="@string/prev_match"
+        android:icon="@drawable/match"
+        android:title="@string/match"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/nav_next"
+        android:id="@+id/nav_team"
         android:enabled="true"
-        android:icon="@drawable/next"
-        android:title="@string/next_match"
+        android:icon="@drawable/team"
+        android:title="@string/team"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_fav"
         android:enabled="true"
-        android:icon="@drawable/ic_favorite_black_24dp"
+        android:icon="@drawable/favorites"
         android:title="@string/favorite"
         app:showAsAction="ifRoom" />
 </menu>

@@ -1,4 +1,4 @@
-package fauzi.hilmy.bolakade.favorite
+package fauzi.hilmy.bolakade.favorite.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -27,11 +27,25 @@ class SQLIteFavMatch(ctx: Context) : ManagedSQLiteOpenHelper(ctx, "FavMatch.db",
                 FavMatch.HOME_NAME to TEXT,
                 FavMatch.HOME_SCORE to TEXT,
                 FavMatch.AWAY_NAME to TEXT,
-                FavMatch.AWAY_SCORE to TEXT)
+                FavMatch.AWAY_SCORE to TEXT
+        )
+
+        db?.createTable(
+                FavTeam.TABLE_TEAM, true,
+                FavTeam.ID to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
+                FavTeam.TEAM_ID to TEXT + UNIQUE,
+                FavTeam.TEAM_NAME to TEXT,
+                FavTeam.TEAM_LOGO to TEXT,
+                FavTeam.TEAM_YEAR to TEXT,
+                FavTeam.TEAM_MANAGER to TEXT,
+                FavTeam.TEAM_STADIUM to TEXT,
+                FavTeam.TEAM_DESCRIPTION to TEXT
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
         db?.dropTable(FavMatch.TABLE_FAVORITE, true)
+        db?.dropTable(FavTeam.TABLE_TEAM, true)
     }
 }
 

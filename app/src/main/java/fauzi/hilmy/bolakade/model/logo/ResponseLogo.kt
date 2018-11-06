@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 data class ResponseLogo(
 
 	@field:SerializedName("teams")
-	val teams: List<TeamsItem>
+	val logo: List<TeamsItemm>
 )

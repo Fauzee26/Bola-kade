@@ -10,11 +10,17 @@ data class DataLastNext(
         @field:SerializedName("strTime")
         val strTime: String? = null,
 
+        @field:SerializedName("strEvent")
+        val strEvent: String? = null,
+
         @field:SerializedName("strFilename")
         val strFilename: String? = null,
 
         @field:SerializedName("dateEvent")
         val dateEvent: String? = null,
+
+        @SerializedName("strSport")
+        var strSport: String? = null,
 
         @field:SerializedName("strHomeLineupGoalkeeper")
         val strHomeLineupGoalkeeper: String? = null,

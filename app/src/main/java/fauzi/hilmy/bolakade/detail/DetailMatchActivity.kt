@@ -1,4 +1,4 @@
-package fauzi.hilmy.bolakade.activity
+package fauzi.hilmy.bolakade.detail
 
 import android.app.AlertDialog
 import android.database.sqlite.SQLiteConstraintException
@@ -13,8 +13,8 @@ import android.widget.TextView
 import android.widget.Toast
 import fauzi.hilmy.bolakade.R
 import fauzi.hilmy.bolakade.api.ApiClient
-import fauzi.hilmy.bolakade.favorite.FavMatch
-import fauzi.hilmy.bolakade.favorite.database
+import fauzi.hilmy.bolakade.favorite.db.FavMatch
+import fauzi.hilmy.bolakade.favorite.db.database
 import fauzi.hilmy.bolakade.model.match.DataLastNext
 import fauzi.hilmy.bolakade.model.match.ResponsePrevNext
 import fauzi.hilmy.bolakade.util.MyConstant
@@ -32,7 +32,7 @@ import org.jetbrains.anko.image
 import retrofit2.Call
 import retrofit2.Response
 
-class DetailActivity : AppCompatActivity() {
+class DetailMatchActivity : AppCompatActivity() {
 
     private lateinit var id: String
     private var isFavMatch: Boolean = false
@@ -101,6 +101,7 @@ class DetailActivity : AppCompatActivity() {
         }
 
         lastNext.forEach {
+            title = it.strEvent
             txtDetailDate.text = Util.formatDate(it.dateEvent)
             txtDetailTime.text = Util.timeFormat(it.strTime)
             txtDetailHome.text = it.strHomeTeam
