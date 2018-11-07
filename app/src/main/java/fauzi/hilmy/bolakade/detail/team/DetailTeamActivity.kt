@@ -42,7 +42,7 @@ class DetailTeamActivity : AppCompatActivity() {
 
         showData()
         favoriteState()
-        setFavorite()
+//        setFavorite()
 
         setupViewPager(detail_viewpager)
         detail_tab.setupWithViewPager(detail_viewpager)
@@ -95,7 +95,7 @@ class DetailTeamActivity : AppCompatActivity() {
         database.use {
             val result = select(FavTeam.TABLE_TEAM)
                     .whereArgs("(TEAM_ID = {id})",
-                            "id" to teams.teamId!!.any())
+                            "id" to teams.teamId!!)
             val favorite = result.parseList(classParser<FavTeam>())
             if (!favorite.isEmpty()) isFavorite = true
         }

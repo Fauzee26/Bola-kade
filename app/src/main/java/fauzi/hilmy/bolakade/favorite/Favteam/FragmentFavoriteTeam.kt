@@ -16,6 +16,7 @@ import fauzi.hilmy.bolakade.R.color.colorAccent
 import fauzi.hilmy.bolakade.detail.team.DetailTeamActivity
 import fauzi.hilmy.bolakade.favorite.db.FavTeam
 import fauzi.hilmy.bolakade.favorite.db.database
+import fauzi.hilmy.bolakade.model.team.TeamsItem
 import fauzi.hilmy.bolakade.util.MyConstant.ID_EVENT
 import org.jetbrains.anko.*
 import org.jetbrains.anko.db.classParser
@@ -40,8 +41,12 @@ class FragmentFavoriteTeam : Fragment(), AnkoComponent<Context> {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         adapter = AdapterFavoriteTeam(favTeam) {
+
+            val teams = TeamsItem(
+                    it.teamId, it.teamName, it.teamYear, it.teamManager, it.teamStadium, it.teamDescription, it.teamLogo
+            )
             startActivity<DetailTeamActivity>(
-                    ID_EVENT to it
+                    ID_EVENT to teams
             )
         }
 

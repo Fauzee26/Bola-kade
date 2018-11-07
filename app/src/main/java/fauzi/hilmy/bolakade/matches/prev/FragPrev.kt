@@ -43,7 +43,6 @@ class FragPrev : Fragment(), PrevMatchView {
 
         getListLeague(requireContext(), leagues)
         spinAdaptera = SpinAdaptera(requireContext(), android.R.layout.simple_spinner_dropdown_item, getListLeague(requireContext(), leagues))
-//        val spinAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, leagues)
 
         Log.e("LIST LEAGUE PREV", leagues.toString())
 

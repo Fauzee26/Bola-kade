@@ -41,23 +41,6 @@ class MainActivity : AppCompatActivity() {
         bottom_nav.selectedItemId = nav_match
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.nav_search, menu)
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        return when (item.itemId) {
-//            action_searchh -> {
-//                val intent = Intent(applicationContext, SearchActivity::class.java)
-//                startActivity(intent)
-//
-//                true
-//            }
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//    }
-
     private fun addFragmentOnTop(fragment: Fragment) {
         if (savedInstanceState == null) {
             supportFragmentManager

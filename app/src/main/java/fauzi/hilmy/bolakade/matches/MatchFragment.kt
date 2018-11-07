@@ -43,21 +43,6 @@ class MatchFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater?.inflate(R.menu.nav_search, menu)
 
-//        val searchItem = menu?.findItem(R.id.action_search)
-//        val searchView = MenuItemCompat.getActionView(searchItem) as SearchView
-//
-//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-//            override fun onQueryTextSubmit(text: String?): Boolean {
-//                return false
-//            }
-//
-//            override fun onQueryTextChange(text: String?): Boolean {
-//                val intent = Intent(context, MatchSearchActivity::class.java)
-//                startActivity(intent)
-//                return false
-//            }
-//
-//        })
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

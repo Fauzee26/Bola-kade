@@ -59,18 +59,4 @@ class HomeTest {
         onView(withId(swipedd)).perform(swipeUp())
     }
 
-//    @Test
-//    fun testNext() {
-//        Thread.sleep(1000)
-//        onView(withId(bottom_nav)).check(matches(isDisplayed()))
-//        onView(withId(nav_next)).perform(click())
-//
-//        Thread.sleep(1000)
-//        onView(withId(recyclerNext)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(2, click()))
-//
-//        Thread.sleep(1000)
-//        onView(withId(btnLineup)).perform(click())
-//        onView(withText("Lineups is have not been made")).check(matches(isDisplayed()))
-//    }
-
 }

@@ -33,10 +33,6 @@ class MatchSearchActivity : AppCompatActivity() {
         setContentView(R.layout.activity_match_search)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-//        recycleSearchMatch.adapter = lastNext
-//        recycleSearchMatch.layoutManager = LinearLayoutManager(this)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
